@@ -16,6 +16,7 @@ class User_Mgmt extends CI_Model
 		return "User Sucessfully Registered";
 	}
 
+
 	public  function updateUser($data)
 	{
 		$this->db->where('id',1);
