@@ -4,16 +4,16 @@
 */
 class Redirect extends CI_Controller
 {
-	
-	function signUp()
+
+	public function userDashboard()
 	{
-		$this->load->view->('index');
+		$this->load->view('dashboard');
 	}
-}
-
-
-
-
+	public function adminDashboard()
+	{
+		$this->load->view('admin_dashboard');
+	}
+ }
 
 
 ?>

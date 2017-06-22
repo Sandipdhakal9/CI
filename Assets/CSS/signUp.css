@@ -235,7 +235,7 @@ body
    text-align: left;
    vertical-align: top;
 }
-#Editbox6
+#username
 {
    border: 1px #CCCCCC solid;
    border-radius: 4px;
@@ -277,7 +277,7 @@ body
    text-align: left;
    vertical-align: middle;
 }
-#Button1
+#btnSubmit
 {
    border: 1px #2E6DA4 solid;
    border-radius: 4px;
