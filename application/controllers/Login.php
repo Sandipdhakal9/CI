@@ -24,61 +24,46 @@ public function loginUser(){
 		$password=$this->input->post('password');
 
 		
-		echo "We are in UserLogin controller";
-		echo "<h1>"."User Sucessfully Registered"."</h1>";
+		//echo "We are in UserLogin controller";
+		//echo "<h1>"."User Sucessfully Registered"."</h1>";
 		$this->load->model('user_mgmt');
 		$ulogin=$this->user_mgmt->validateUserLogin($username,$password);
-		if($ulogin==1){
-		$this->load->view('dashboard');
-		}
-		else{
-		$this->load->view('login');
-		}
+
+		$userdata=array(
+		'user_id'=>$ulogin,
+		'username'=>$username,
+		'logged_in'=>true
+		);
+
+		//keepting the session to the user id and username at once after the login is done ...
+		$this->session->set_userdata($userdata);
+
 		if ($ulogin) {
+
 			if($ulogin==1){
-				redirect ('Redirect/userDashboard');
+				$this->load->library('session');
+				$this->session->set_userdata('username',$username);
+				$this->load->view('dashboard');
+
 			}
 
-		
 		else{
-			redirect ('Redirect/adminDashboard');
+			$this->load->library('session');
+			$this->session->set_userdata('username',$username);
+			$this->load->view('admin_dashboard');
 		}
 		
-}else 
-echo "Invalid Username and Password";
-redirect ('login');
+	}
+	else{
 
-		
-}
-
-public function loginAdmin(){
-
-	$data = array(
-		'user_type_id'=>$this->input->post('Auser_type_id'),
-		'username' 	  =>$this->input->post('AtxtUsername'),
-		'password' 	  =>$this->input->post('AtxtPassword')
-
-		);
-		echo "We are in AdminLogin controller";
-		echo "<h1>"."User Sucessfully Registered"."</h1>";
-		$this->load->model('user_mgmt');
-		$adminLogin=$this->user_mgmt->validateAdminLogin($data);
-
-		if($adminLogin){
-			redirect(base_url() . 'admin_dashboard');
-				 	echo "login";
-		}
-		else{
-
-			echo " not login";
-		}
-
+		$this->load->view('login');
+	echo "<h1>"."Invalid Username and Password" ."<h1>";
+	
+	 } 
 
 
 		
-}
-
-
-}
+ 	 }
+	}
 ?>
 	

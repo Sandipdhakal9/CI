@@ -17,26 +17,26 @@
 
  <form action= "<?php echo base_url();?>SignUp/registerUser/" method="post">
   
-  	<input type="hidden" name="user_type_id" value="1">
+  	<input type="hidden" name="user_type_id" value="1"><br>
     <label><font size="5"> First Name </font></label>
-    <input type="text" placeholder="Enter First Name" name="first_name" id="fname" required><br><br><br><br><br>
+    <input type="text" style=" position:absolute; right: 50px; height: 30px; width: 200px" placeholder="Enter First Name" name="first_name" id="fname" required><br><br><br><br><br>
 
     <label><font size="5">Last Name </font></label>
-    <input  type="text" placeholder="Enter Last Name" name="last_name" id="lname" required><br><br><br><br><br>
+    <input  type="text" style="position:absolute; right: 50px; height: 30px; width: 200px" placeholder="Enter Last Name" name="last_name" id="lname" required><br><br><br><br><br>
 
     <label><font size="5">Email</font></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required><br><br><br><br><br>
+    <input type="email" style="position:absolute; right: 50px; height: 30px; width: 200px" placeholder="Enter Email" name="email" id="email" required><br><br><br><br><br>
 
     <label><font size="5">Username </font></label>
-    <input type="text" placeholder="Enter Username" name="username" id="username" required><br><br><br><br><br>
+    <input type="text" style="position:absolute; right: 50px; height: 30px; width: 200px" placeholder="Enter Username" name="username" id="username" required><br><br><br><br><br>
 
     <label><font size="5">Password</font></label>
-    <input  type="password" placeholder="Enter Password" name="password" id="password" required ><br><br><br><br><br>
+    <input  type="password" style="position:absolute; right: 50px; height: 30px; width: 200px"  placeholder="Enter Password" name="password" id="password" required ><br><br><br><br><br>
 
    <label><font size="5">Repeat Password </font></label>
-    <input type="password" style="height: 1500px, width: 1500px;" placeholder="Repeat Password" name="psw-repeat" id="rpassword" required ><br><br><br><br><br>
+    <input type="password"  style="position:absolute; right: 50px; height: 30px; width: 200px" placeholder="Repeat Password" name="psw-repeat" id="rpassword" required ><br><br><br><br><br>
 
-    <input type="submit" value="SignUp" id="btnSubmit">
+    <input type="submit"  style=" position:absolute; right: 160px; height: 40px; width: 120px" value="SignUp"  id="btnSubmit">
  <?php
 if(isset($message)) echo $msg;
 ?>  

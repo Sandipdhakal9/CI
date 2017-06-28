@@ -16,16 +16,16 @@
 <input type="submit" id="Button2" onclick="window.location.href='signUp';return false;" name="backToSingUp" value="Sign Up Here" style="position:absolute;left:369px;top:391px;width:206px;height:56px;z-index:15;">
 <div id="wb_Form1" style="position:absolute;left:196px;top:22px;width:320px;height:277px;z-index:16;">
 
-<h1>User Login</h1>
+<h1> <font size="20" color="lime"><u>User Login</u></font>  </h1>
 <form method="post" action="<?php echo base_url();?>Login/loginUser/">
 	
-<label>Username</label><br>
-<input type="text" name="username" placeholder="username"><br>
+<label><font size="6">Username </font> </label><br>
+<input type="text" style="height: 30px; width: 200px" name="username" placeholder="username"><br><br>
 
-<label>Password</label><br>
-<input type="password" name="password" placeholder="password"><br>
+<label><font size="6">Password</font> </label><br>
+<input type="password" style="height: 30px; width: 200px" name="password" placeholder="password"><br><br><br>
 
-<input type="submit" value="Login" name="login">
+<input type="submit" style="height: 40px; width: 120px" value="Login" name="login">
 
 </form>
 
@@ -33,16 +33,16 @@
 </div>
 <div id="wb_Form2" style="position:absolute;left:549px;top:22px;width:320px;height:277px;z-index:17;">
 
-<h1>Admin Login</h1>
-<form method="post" action="<?php echo base_url();?>Login/loginAdmin/">
+<h1><font size="20" color="purple"><u> Admin Login</u></font> </h1>
+<form method="post" action="<?php echo base_url();?>Login/loginUser/">
 <input type="hidden" name="user_type_id" value="2">
-<label>Username</label><br>
-<input type="text" name="username" placeholder="username"><br>
+<label><font size="6">Username</font> </label><br>
+<input type="text" style="height: 30px; width: 200px" name="username" placeholder="username"><br><br>
 
-<label>Password</label><br>
-<input type="password" name="password" placeholder="password"><br>
+<label><font size="6">Password</font> </label><br>
+<input type="password" style="height: 30px; width: 200px" name="password" placeholder="password"><br><br><br>
 
-<input type="submit" value="Login" name="login" >
+<input type="submit" style="height: 40px; width: 120px"  value="Login" name="login" >
 
 </form>
 

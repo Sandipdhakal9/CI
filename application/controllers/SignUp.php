@@ -16,10 +16,11 @@ public function index()
 		'password' 	  =>$this->input->post('password')
 
 		);
-		echo "We are in controller";
-		echo "<h1>"."User Sucessfully Registered"."</h1>";
+		echo "<h1>"."User Sucessfully Registered, Now go to Login Page from 'Login Here' Option. "."</h1>";
 		$this->load->model('user_mgmt');
 		$this->user_mgmt->registerUser($data);
+		$this->load->view('signUp');
+
 	}
 }
 

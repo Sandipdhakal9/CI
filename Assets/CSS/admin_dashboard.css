@@ -122,12 +122,13 @@ body
 }
 #wb_Heading1
 {
-   background-color: transparent;
-   background-image: url(images/admin_dashboard_Heading1_bkgrnd.png);
-   background-repeat: repeat;
-   background-position: left top;
-   border: 0px #FFFFFF solid;
-   padding: 0px 0px 0px 0px;
+    background-color: #212029;
+    background-image: url(Assets/images/admin_dashboard_Heading1_bkgrnd.png);
+    background-repeat: repeat;
+    background-position: left top;
+    border: 0px #FFFFFF solid;
+    padding: 0px 0px 0px 0px;
+
 }
 #Heading1
 {
@@ -140,8 +141,8 @@ body
 }
 #wb_Heading2
 {
-   background-color: transparent;
-   background-image: url(images/admin_dashboard_Heading2_bkgrnd.png);
+   background-color: #212020;
+   background-image: url(Assets/images/admin_dashboard_Heading2_bkgrnd.png);
    background-repeat: repeat;
    background-position: left top;
    border: 0px #FFFFFF solid;
@@ -158,8 +159,8 @@ body
 }
 #wb_Heading3
 {
-   background-color: transparent;
-   background-image: url(images/admin_dashboard_Heading3_bkgrnd.png);
+   background-color: #212020;
+   background-image: url(Assets/images/admin_dashboard_Heading3_bkgrnd.png);
    background-repeat: repeat;
    background-position: left top;
    border: 0px #FFFFFF solid;
@@ -176,8 +177,8 @@ body
 }
 #wb_Heading4
 {
-   background-color: transparent;
-   background-image: url(images/admin_dashboard_Heading4_bkgrnd.png);
+   background-color: #212020;
+   background-image: url(Assets/images/admin_dashboard_Heading4_bkgrnd.png);
    background-repeat: repeat;
    background-position: left top;
    border: 0px #FFFFFF solid;
@@ -194,8 +195,8 @@ body
 }
 #wb_Heading5
 {
-   background-color: transparent;
-   background-image: url(images/admin_dashboard_Heading5_bkgrnd.png);
+   background-color: #212020;
+   background-image: url(Assets/images/admin_dashboard_Heading5_bkgrnd.png);
    background-repeat: repeat;
    background-position: left top;
    border: 0px #FFFFFF solid;
@@ -212,8 +213,8 @@ body
 }
 #wb_Heading6
 {
-   background-color: transparent;
-   background-image: url(images/admin_dashboard_Heading6_bkgrnd.png);
+   background-color: #212020;
+   background-image: url(Assets/images/admin_dashboard_Heading6_bkgrnd.png);
    background-repeat: repeat;
    background-position: left top;
    border: 0px #FFFFFF solid;
@@ -390,6 +391,18 @@ body
    background-image: none;
    color: #FFFFFF;
    font-family: Verdana;
+   font-weight: normal;
+   font-size: 37px;
+}
+
+#Button19
+{
+   border: 1px #2E6DA4 solid;
+   border-radius: 4px;
+   background-color: #3370B7;
+   background-image: none;
+   color: #FFFFFF;
+   font-family: Arial;
    font-weight: normal;
    font-size: 37px;
 }

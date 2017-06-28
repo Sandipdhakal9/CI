@@ -6,10 +6,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['form_name']) && $_POST
       session_start();
    }
    unset($_SESSION['username']);
-   unset($_SESSION['fullname']);
-   header('Location: ./login.html');
+   header('Location: login');
    exit;
 }
+$uname=$_SESSION['username'];
 ?>
 <!doctype html>
 <html>
@@ -17,24 +17,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['form_name']) && $_POST
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta charset="utf-8">
 <title>Admin Dashboard</title>
-<link href="TransportFare.css" rel="stylesheet">
-<link href="admin_dashboard.css" rel="stylesheet">
+<link href="<?PHP echo base_url();?>Assets/CSS/TransportFare.css" rel="stylesheet">
+<link href="<?PHP echo base_url();?>Assets/CSS/admin_dashboard.css" rel="stylesheet">
 </head>
 <body>
 <div id="container">
 <div id="wb_Image1" style="position:absolute;left:1px;top:6px;width:896px;height:955px;z-index:0;">
-<img src="images/Naturally Nepal  Once is not enough by a7madbina.jpg" id="Image1" alt=""></div>
+<img src="<?PHP echo base_url();?>Assets/images/Naturally Nepal  Once is not enough by a7madbina.jpg" id="Image1" alt=""></div>
 <div id="wb_Image2" style="position:absolute;left:0px;top:0px;width:176px;height:103px;z-index:1;">
-<a href="./index.html"><img src="images/Untitled design.png" id="Image2" alt=""></a></div>
-<label for="" id="Label1" style="position:absolute;left:556px;top:0px;width:332px;height:58px;line-height:58px;z-index:2;">Welcome Username</label>
-<input type="submit" id="Button3" onclick="window.location.href='./delete_vehicle.html';return false;" name="Delete Vehicle" value="Delete" style="position:absolute;left:744px;top:283px;width:152px;height:60px;z-index:3;">
-<input type="submit" id="Button5" onclick="window.location.href='./add_vehicle.html';return false;" name="Add Vehicle" value="Add" style="position:absolute;left:368px;top:283px;width:188px;height:60px;z-index:4;">
-<input type="submit" id="Button7" onclick="window.location.href='./update_vehicle.html';return false;" name="Update Vehicle" value="Update" style="position:absolute;left:575px;top:283px;width:149px;height:60px;z-index:5;">
+<a href="index.php"><img src="<?PHP echo base_url();?>Assets/images/Untitled design.png" id="Image2" alt=""></a></div>
+<label for="" id="Label1" style="position:absolute;left:556px;top:0px;width:332px;height:58px;line-height:58px;z-index:2;">Welcome <?php echo "<b>"."$uname"."</b>";?></label>
+<input type="submit" id="Button3" onclick="window.location.href='<?PHP echo base_url();?>Redirect/deleteVehicle';return false;" name="Delete Vehicle" value="Delete" style="position:absolute;left:744px;top:283px;width:152px;height:60px;z-index:3;">
+<input type="submit" id="Button5" onclick="window.location.href='<?PHP echo base_url();?>Redirect/addVehicle';return false;" name="Add Vehicle" value="Add" style="position:absolute;left:368px;top:283px;width:188px;height:60px;z-index:4;">
+<input type="submit" id="Button7" onclick="window.location.href='<?PHP echo base_url();?>Vehicle_ctrl/viewVehicle';return false;" name="Update Vehicle" value="Update" style="position:absolute;left:575px;top:283px;width:149px;height:60px;z-index:5;">
 <label for="" id="Label2" style="position:absolute;left:36px;top:175px;width:818px;height:44px;line-height:44px;z-index:6;">Hello Admin :) What do you want to do?</label>
 <div id="wb_Image3" style="position:absolute;left:306px;top:6px;width:227px;height:157px;z-index:7;">
-<img src="images/nepal-flag-animation.gif" id="Image3" alt=""></div>
+<img src="<?PHP echo base_url();?>Assets/images/nepal-flag-animation.gif" id="Image3" alt=""></div>
 <div id="wb_Logout1" style="position:absolute;left:770px;top:67px;width:124px;height:32px;z-index:8;">
-<form name="logoutform" method="post" action="<?php echo basename(__FILE__); ?>" id="logoutform">
+<form name="logoutform" method="post" action="<?php echo base_url(); ?>login" id="logoutform">
 <input type="hidden" name="form_name" value="logoutform">
 <input type="submit" name="logout" value="Logout" id="Logout1">
 </form>
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['form_name']) && $_POST
 <h1 id="Heading5">Station Info</h1></div>
 <div id="wb_Heading6" style="position:absolute;left:0px;top:406px;width:288px;height:53px;text-align:center;z-index:14;">
 <h1 id="Heading6">Fare Info</h1></div>
-<input type="submit" id="Button1" onclick="window.location.href='./add_fare.html';return false;" name="Add Fare" value="Add" style="position:absolute;left:368px;top:405px;width:188px;height:60px;z-index:15;">
+<input type="submit" id="Button1" onclick="window.location.href='<?php echo base_url(); ?>Vehicle_ctrl/getVehicleRoute';return false;" name="Add Fare" value="Add" style="position:absolute;left:368px;top:405px;width:188px;height:60px;z-index:15;">
 <input type="submit" id="Button2" onclick="window.location.href='./update_fare.html';return false;" name="Update Fare" value="Update" style="position:absolute;left:575px;top:405px;width:149px;height:60px;z-index:16;">
 <input type="submit" id="Button4" onclick="window.location.href='./delete_fare.html';return false;" name="Delete Fare" value="Delete" style="position:absolute;left:744px;top:402px;width:152px;height:60px;z-index:17;">
 <input type="submit" id="Button6" onclick="window.location.href='./add_vehicle_route.html';return false;" name="Add Route" value="Add" style="position:absolute;left:368px;top:518px;width:188px;height:60px;z-index:18;">
@@ -66,6 +66,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['form_name']) && $_POST
 <input type="submit" id="Button16" onclick="window.location.href='./add_vehicle_station.html';return false;" name="Add Station" value="Add" style="position:absolute;left:368px;top:856px;width:188px;height:60px;z-index:27;">
 <input type="submit" id="Button17" onclick="window.location.href='./Update_vehicle_station.html';return false;" name="Update Station" value="Update" style="position:absolute;left:575px;top:856px;width:149px;height:60px;z-index:28;">
 <input type="submit" id="Button18" onclick="window.location.href='./delete_vehicle_station.html';return false;" name="Delete Station" value="Delete" style="position:absolute;left:744px;top:856px;width:152px;height:60px;z-index:29;">
+
+<input type="submit" id="Button19" onclick="window.location.href='<?php echo base_url();?>Redirect/updateNews';return false;" name="btnUpdateNews" value="Update Latest News Here" style="position:absolute;left:462px;top:227px;width:434px;height:46px;z-index:30;">
+
 </div>
 </body>
 </html>

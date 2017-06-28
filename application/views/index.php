@@ -34,7 +34,7 @@ $(document).ready(function()
 <span style="color:#000000;font-family:'Lucida Sans Unicode';font-size:43px;">Welcome to Transport Fare Nepal. Here You will find any kind of Information related with Vehicles and its Fare inside the Routes of Nepal.</span></div>
 <div id="SlideShow1" style="position:absolute;left:0px;top:102px;width:799px;height:315px;z-index:5;">
 <img class="image" src="<?PHP echo base_url();?>Assets/images/Transport_Fare_Nepal.png" alt="" title="">
-<img class="image" src="<?PHP echo base_url();?>Assets//Assets/images/Mahanagar yatayat.jpg" style="display:none;" alt="" title="">
+<img class="image" src="<?PHP echo base_url();?>Assets/images/Mahanagar yatayat.jpg" style="display:none;" alt="" title="">
 <img class="image" src="<?PHP echo base_url();?>Assets/images/Nepal Yatayat.jpg" style="display:none;" alt="" title="">
 <img class="image" src="<?PHP echo base_url();?>Assets/images/Sajha Yatayat.jpg" style="display:none;" alt="" title="">
 <img class="image" src="<?PHP echo base_url();?>Assets/images/Bus Nepal.JPG" style="display:none;" alt="" title="">

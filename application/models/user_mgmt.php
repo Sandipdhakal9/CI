@@ -25,7 +25,7 @@ class User_Mgmt extends CI_Model
 			return $sql->row()->user_type_id;
 			}
 			else{
-				echo "Sorry Try again";
+				//echo "Sorry Try again";
 				//return false;
 			}
 	}
@@ -41,10 +41,19 @@ class User_Mgmt extends CI_Model
 
 
 
-	public  function updateUser($data)
+	public  function updateUser()
 	{
-		$this->db->where('id',1);
-		$this->db->update('data',$data);
+		/*$this->db->where('id',1);
+		$this->db->update('data',$data);*/
+		$data=array(
+			'first_name'=>$this->input->user('first_name'),
+			'last_name'=>$this->input->user('last_name'),
+			'email'=>$this->input->user('email'),
+			'password' =>$this->input->user('password')
+		);
+
+		$this->db->where('user_id', $this->input->user('user_id'));
+		return $this->db->updateUserProfile('user', $data);
 	}
 	
 	public function deleteUser($data)
@@ -52,6 +61,13 @@ class User_Mgmt extends CI_Model
 		$this->db->where('id',$this->url->segment(2));
 
 		$this->db->delete('data');
+	}
+	public function selectUsername(){
+		$uaname=$this->session->userdata("username");
+		$this->db->where("username",$uname);
+		$result=$this->db->get("user");
+		return $result;
+
 	}
 }
 ?>
