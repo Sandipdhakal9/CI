@@ -41,6 +41,7 @@ tr:nth-child(even) {
 
 </head>
 <body>
+
 <div id="container">
 <div id="wb_Image1" style="position:absolute;left:0px;top:0px;width:995px;height:666px;filter:alpha(opacity=15);opacity:0.15;z-index:7;">
 <img src="<?PHP echo base_url();?>Assets/images/Update Vehicle.jpg" id="Image1" alt=""></div>
@@ -56,12 +57,26 @@ tr:nth-child(even) {
 </div>
 <div id="wb_Form1" style="position:absolute;left:533px;top:120px;width:597px;height:455px;z-index:12;">
 <form  action="<?php echo base_url();?>Vehicle_ctrl/updateVehicle" method="post" >
-<input type="hidden" name="id" value="">
+
+<?php
+if (is_array($details) || is_object($details))
+{
+
+    foreach ($details as $vdata) {
+      
+    }
+  }
+
+?>
+
+
+
+<input type="hidden" name="id" value="<?php echo $vdata->id;?>">
 <label for="" id="Label2" style="position:absolute;left:0px;top:26px;width:217px;height:54px;line-height:54px;z-index:0;">Vehicle ID</label>
 <label for="" id="Label3" style="position:absolute;left:0px;top:153px;width:217px;height:54px;line-height:54px;z-index:1;">Vehicle Name</label>
 <label for="" id="Label4" style="position:absolute;left:0px;top:262px;width:217px;height:54px;line-height:54px;z-index:2;">Vehicle Type</label>
-<input type="text" id="Editbox1" style="position:absolute;left:278px;top:153px;width:309px;height:52px;line-height:52px;z-index:3;" name="txtVehicleId" value="" spellcheck="false">
-<input type="text" id="Editbox2" style="position:absolute;left:277px;top:26px;width:309px;height:52px;line-height:52px;z-index:4;" name="txtVehicleId" value="" spellcheck="false">
+<input type="text" id="Editbox2" style="position:absolute;left:278px;top:153px;width:309px;height:52px;line-height:52px font-size:200px;" name="vehicle_name" value="<?php echo $vdata->vehicle_name;?>" >
+<input type="text" id="Editbox2" style="position:absolute;left:277px;top:26px;width:309px;height:52px;line-height:52px;z-index:4;" name="txtVehicleId" value="<?php echo $vdata->vehicle_id;?>">
 <input type="submit" id="Button1" name="btnUpdate" value="Update" style="position:absolute;left:225px;top:389px;width:200px;height:66px;z-index:5;">
 <select name="cmbVehicleType" size="1" id="Combobox2" style="position:absolute;left:277px;top:262px;width:319px;height:62px;z-index:6;" tabindex="4">
 <option value="Bus">Bus</option>
@@ -69,7 +84,10 @@ tr:nth-child(even) {
 <option value="Taxi">Taxi</option>
 <option value="Tempo">Tempo</option>
 </select>
+
 </form>
+
+
 </div>
 <div id="wb_Text1" style="position:absolute;left:203px;top:103px;width:240px;height:37px;z-index:13;">
 <span style="background-color:#90EE90;color:#000000;font-family:Arial;font-size:32px;"><strong>Select Vehicle</strong></span></div><br><br><br><br><br><br><br><br><br><br>
@@ -78,7 +96,7 @@ tr:nth-child(even) {
 
 
 <tr>
-    <th><h1>Vehicle Idenity Number</h1></th>
+    <th><h1>Vehicle Identity Number</h1></th>
     <th><h1>Select</h1></th>
   </tr>
 <?php
@@ -86,7 +104,7 @@ tr:nth-child(even) {
 ?>
 	<tr>
 	<td><h3><?= $name->vehicle_id?></h3></td>
-	<td><h3>Select</h3></td>
+	<td><a href="<?php echo base_url();?>Vehicle_ctrl/getVehicleDetails?vid=<?php echo  $name->vehicle_id;?>"><h3>Select </a></h3></td>
 
 	</tr>
 

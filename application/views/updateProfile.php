@@ -2,14 +2,9 @@
 $this->load->library('session');
 $uname=$_SESSION['username'];
 //$uid=$_SESSION['uid'];
-
-if($arr->num_rows()>0){
-    foreach ($arr->result() as $row) {
-        
-    }
-}
 ?>
 
+        
 
 <!doctype html>
 <html>
@@ -29,21 +24,27 @@ if($arr->num_rows()>0){
 <div id="wb_frmSignUp" style="position:absolute;left:201px;top:110px;width:464px;height:500px;z-index:13;">
 
 
-<form action= "<?php echo base_url();?>Update/updateUserProfile/" method="post">
+<form action= "<?php echo base_url();?>User_ctrl/updateUserProfile/" method="post">
   
-  	<input type="hidden" name="user_id"><br>
+  <?php     
+    foreach($profile as $udata){
+    }
+    ?>
+  	<input type="hidden" name="user_id" value="<?php echo $udata->user_id;?>"><br>
+
+    <input type="hidden" name="username" value="<?php echo $udata->username;?>"><br>
     <label><font size="5"> First Name </font></label>
-    <input type="text" style=" position:absolute; right: 50px; height: 30px; width: 200px" placeholder="Enter First Name" name="first_name" aid="fname" value="<?php echo $row->first_name;?>"><br><br><br><br><br>
+    <input type="text" style=" position:absolute; right: 50px; height: 30px; width: 200px" placeholder="Enter First Name" name="txtFirstName"  value="<?php echo $udata->first_name;?>"><br><br><br><br><br>
 
     <label><font size="5">Last Name </font></label>
-    <input  type="text" style="position:absolute; right: 50px; height: 30px; width: 200px" placeholder="Enter Last Name" name="last_name" value="<?php echo $row->last_name;?>" id="lname" ><br><br><br><br><br>
+    <input  type="text" style="position:absolute; right: 50px; height: 30px; width: 200px" placeholder="Enter Last Name" name="last_name" value="<?php echo $udata->last_name;?>"  ><br><br><br><br><br>
 
     <label><font size="5">Email</font></label>
-    <input type="email" style="position:absolute; right: 50px; height: 30px; width: 200px" placeholder="Enter Email value" name="email" id="email" value="<?php echo $row->email;?>"><br><br><br><br><br>
+    <input type="email" style="position:absolute; right: 50px; height: 30px; width: 200px" placeholder="Enter Email value" name="email" value="<?php echo $udata->email;?>"><br><br><br><br><br>
 
 
     <label><font size="5">Password</font></label>
-    <input  type="text" style="position:absolute; right: 50px; height: 30px; width: 200px"  placeholder="Enter Password" name="password" id="password" value="<?php echo $row->password;?>"><br><br><br><br><br>
+    <input  type="text" style="position:absolute; right: 50px; height: 30px; width: 200px"  placeholder="Enter Password" name="password" id="password" value="<?php echo $udata->password;?>"><br><br><br><br><br>
 
 
 

@@ -41,20 +41,14 @@ class User_Mgmt extends CI_Model
 
 
 
-	public  function updateUser()
+	public  function userUpdate($uid,$data)
 	{
-		/*$this->db->where('id',1);
-		$this->db->update('data',$data);*/
-		$data=array(
-			'first_name'=>$this->input->user('first_name'),
-			'last_name'=>$this->input->user('last_name'),
-			'email'=>$this->input->user('email'),
-			'password' =>$this->input->user('password')
-		);
-
-		$this->db->where('user_id', $this->input->user('user_id'));
-		return $this->db->updateUserProfile('user', $data);
+		$this->db->where('user_id', $uid);
+		$this->db->update('user', $data);
+		return "user updated";
 	}
+	
+	
 	
 	public function deleteUser($data)
 	{
@@ -62,12 +56,27 @@ class User_Mgmt extends CI_Model
 
 		$this->db->delete('data');
 	}
-	public function selectUsername(){
-		$uaname=$this->session->userdata("username");
-		$this->db->where("username",$uname);
-		$result=$this->db->get("user");
-		return $result;
+	
 
-	}
+	public function getUserData($uname){
+
+			$condition = "username =" . "'" . $uname . "'";
+			$this->db->select('*');
+			$this->db->from('user');
+			$this->db->where($condition);
+
+			$sql = $this->db->get();
+
+			if ($sql->num_rows() == 1) {
+			return $sql->result();
+			} 
+
+			else
+			{
+
+			return false;
+
+			}
 }
+	}
 ?>

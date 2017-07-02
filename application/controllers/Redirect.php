@@ -4,10 +4,6 @@
 */
 class Redirect extends CI_Controller
 {
-public function __construct() {
-parent::__construct();
-
-}
 	public function userDashboard()
 	{
 		$this->load->view('dashboard');
@@ -70,6 +66,13 @@ parent::__construct();
 	public function deleteNews(){
 		$this->load->view('delete_news_update');
 	}
+	public function login(){
+		$this->load->view('login');
+	}
+	public function signUp(){
+		$this->load->view('signUp');
+	}
+
 
 
  }

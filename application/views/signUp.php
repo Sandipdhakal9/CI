@@ -15,7 +15,7 @@
 <a href="index.php"><img src="<?PHP echo base_url();?>Assets/images/Untitled design.png" id="Image2" alt=""></a></div>
 <div id="wb_frmSignUp" style="position:absolute;left:342px;top:61px;width:464px;height:585px;z-index:16;">
 
- <form action= "<?php echo base_url();?>SignUp/registerUser/" method="post">
+ <form action= "<?php echo base_url();?>User_ctrl/registerUser/" method="post">
   
   	<input type="hidden" name="user_type_id" value="1"><br>
     <label><font size="5"> First Name </font></label>

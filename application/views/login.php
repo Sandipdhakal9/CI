@@ -17,7 +17,7 @@
 <div id="wb_Form1" style="position:absolute;left:196px;top:22px;width:320px;height:277px;z-index:16;">
 
 <h1> <font size="20" color="lime"><u>User Login</u></font>  </h1>
-<form method="post" action="<?php echo base_url();?>Login/loginUser/">
+<form method="post" action="<?php echo base_url();?>User_ctrl/loginUser/">
 	
 <label><font size="6">Username </font> </label><br>
 <input type="text" style="height: 30px; width: 200px" name="username" placeholder="username"><br><br>
@@ -34,7 +34,7 @@
 <div id="wb_Form2" style="position:absolute;left:549px;top:22px;width:320px;height:277px;z-index:17;">
 
 <h1><font size="20" color="purple"><u> Admin Login</u></font> </h1>
-<form method="post" action="<?php echo base_url();?>Login/loginUser/">
+<form method="post" action="<?php echo base_url();?>User_ctrl/loginUser/">
 <input type="hidden" name="user_type_id" value="2">
 <label><font size="6">Username</font> </label><br>
 <input type="text" style="height: 30px; width: 200px" name="username" placeholder="username"><br><br>

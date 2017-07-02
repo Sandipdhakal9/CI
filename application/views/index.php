@@ -51,17 +51,19 @@ $(document).ready(function()
 <ul>
 <li class="firstmain"><a href="#" target="_self">Home</a>
 </li>
-<li><a href="signUp" target="_blank">Sign&nbsp;Up</a>
+<li><a href="<?php echo base_url();?>Redirect/signUp" target="_blank">Sign&nbsp;Up</a>
 </li>
-<li><a href="login" target="_blank">Login</a>
+<li><a href="<?php echo base_url();?>Redirect/login" target="_blank">Login</a>
 </li>
 <li><a href="#" target="_self">Features</a>
 </li>
 <li><a href="#" target="_self">About&nbsp;Us</a>
+<!-- <a href="<?php echo base_url(); ?>Assets/images/Transport_Fare_Nepal.png" download>Click Here do download</a> -->
 </li>
 </ul>
 </div>
 </div>
 </div>
+
 </body>
 </html>
