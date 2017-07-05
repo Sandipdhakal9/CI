@@ -89,10 +89,32 @@ class Vehicle_mgmt extends CI_Model
 
 	}
 
-	public function fareDelete($Fid)
+	public function fareDelete($fid)
 	{
-		$this->db->where('fare_id',$Fid);
+		$this->db->where('fare_id',$fid);
 		$this->db->delete('fare');
+		return "deleted";
+
+	}
+
+
+	public function scheduleDelete($sid)
+	{
+		$this->db->where('schedule_id',$sid);
+		$this->db->delete('schedule');
+		return "deleted";
+
+	}
+
+
+
+
+
+
+	public function routeDelete($rid)
+	{
+		$this->db->where('route_id',$rid);
+		$this->db->delete('route');
 		return "deleted";
 
 	}
@@ -162,11 +184,80 @@ class Vehicle_mgmt extends CI_Model
 			return false;
 
 			}
+		}
 
 
 
 
-	}
+	public function getFareDetail($fid){
+
+		$condition = "fare_id =" . "'" . $fid . "'";
+			$this->db->select('*');
+			$this->db->from('fare');
+			$this->db->where($condition);
+
+			$sql = $this->db->get();
+
+			if ($sql->num_rows() == 1) {
+			return $sql->result();
+			} 
+
+			else
+			{
+
+			return false;
+
+			}
+		}
+
+
+		public function getScheduleDetail($sid){
+
+		$condition = "schedule_id =" . "'" . $sid . "'";
+			$this->db->select('*');
+			$this->db->from('schedule');
+			$this->db->where($condition);
+
+			$sql = $this->db->get();
+
+			if ($sql->num_rows() == 1) {
+			return $sql->result();
+			} 
+
+			else
+			{
+
+			return false;
+
+			}
+		}
+
+
+
+
+		public function getRouteDetail($rid){
+
+		$condition = "route_id =" . "'" . $rid . "'";
+			$this->db->select('*');
+			$this->db->from('route');
+			$this->db->where($condition);
+
+			$sql = $this->db->get();
+
+			if ($sql->num_rows() == 1) {
+			return $sql->result();
+			} 
+
+			else
+			{
+
+			return false;
+
+			}
+		}
+
+
+
 
 
 
@@ -207,6 +298,12 @@ class Vehicle_mgmt extends CI_Model
 
 	}
 
+
+	public function getSchedule(){
+	return $this->db->get('schedule');
+
+	}
+
 	public function ownerDeleteInfo(){
 			return $this->db->get('owner');
 	}
@@ -224,4 +321,44 @@ class Vehicle_mgmt extends CI_Model
 		$this->db->update('vehicle', $data);
 		return "vehicle updated";
 	}
+
+
+
+	public function fareUpdate($fid,$data)
+	{
+
+		$this->db->where('id', $fid);
+		$this->db->update('fare', $data);
+		return "fare updated";
+
+
+	}
+
+
+
+
+
+	public function scheduleUpdate($sid,$data)
+	{
+
+		$this->db->where('id', $sid);
+		$this->db->update('schedule', $data);
+		return "schedule updated";
+
+
+	}
+
+
+	public function routeUpdate($rid,$data)
+	{
+
+		$this->db->where('id', $rid);
+		$this->db->update('route', $data);
+		return "fare updated";
+
+
+	}
+
+
+
 }

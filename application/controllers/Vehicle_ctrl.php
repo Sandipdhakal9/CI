@@ -286,10 +286,51 @@ class Vehicle_ctrl extends CI_Controller
 		$this->load->model('Vehicle_mgmt');
 		$data['records']=$this->Vehicle_mgmt->selectVehicle();
 
+
 		//$this->getVehicleDetails();
 
-		$this->load->view('update_vehicle',$data);
+		$this->load->view('select_update',$data);
 	}
+
+	public function selectFare()
+	{
+		$this->load->model('Vehicle_mgmt');
+		$data['records']=$this->Vehicle_mgmt->selectFare();
+
+
+		//$this->getVehicleDetails();
+
+		$this->load->view('select_fare',$data);
+	}	
+
+
+	public function selectRoute()
+	{
+		$this->load->model('Vehicle_mgmt');
+		$data['records']=$this->Vehicle_mgmt->selectRoute();
+
+
+		//$this->getVehicleDetails();
+
+		$this->load->view('select_route',$data);
+	}
+
+
+	public function selectSchedule()
+	{
+		$this->load->model('Vehicle_mgmt');
+		$data['records']=$this->Vehicle_mgmt->getSchedule();
+
+
+		//$this->getVehicleDetails();
+
+		$this->load->view('select_schedule',$data);
+	}
+
+
+
+
+
 
 	public function deleteVehicleDetail()
 	{
@@ -318,6 +359,52 @@ class Vehicle_ctrl extends CI_Controller
 	}
 
 
+	public function deleteFare()
+	{
+		$fid=$this->input->get('fid');
+		//$id=$this->input->get('id');
+		$this->load->model('Vehicle_mgmt');
+		$this->Vehicle_mgmt->fareDelete($fid);
+
+		
+		$this->selectFare();
+		echo "<h1>"."Fare Details Deleted"."</h1>";
+
+		
+	}
+
+
+
+		public function deleteSchedule()
+	{
+		$sid=$this->input->get('sid');
+		//$id=$this->input->get('id');
+		$this->load->model('Vehicle_mgmt');
+		$this->Vehicle_mgmt->scheduleDelete($sid);
+
+		
+		$this->selectSchedule();
+		echo "<h1>"."Schedule Details Deleted"."</h1>";
+
+		
+	}
+
+	public function deleteRoute()
+	{
+		$rid=$this->input->get('rid');
+		//$id=$this->input->get('id');
+		$this->load->model('Vehicle_mgmt');
+		$this->Vehicle_mgmt->routeDelete($rid);
+
+		
+		$this->selectRoute();
+		echo "<h1>"."Route Details Deleted"."</h1>";
+
+		
+	}
+
+
+
 	public function updateVehicle(){
 
 		$vid=$this->input->post('id');
@@ -333,10 +420,81 @@ class Vehicle_ctrl extends CI_Controller
 		$this->Vehicle_mgmt->vehicleUpdate($vid,$data);
 
 
-		$this->getVehicleDetails();
+		$this->viewVehicle();
 		echo "<h1>"."Vehicle Info Updated."."</h1>";
 
 	}
+
+
+	public function updateFare(){
+
+		$fid=$this->input->post('id');
+
+		$data = array(
+		'vehicle_id'   =>$this->input->post('cmbVehicleId'),
+		'fare_id' =>$this->input->post('txtFareId'),
+		'route_id' =>$this->input->post('cmbRouteId'),
+		'from_place'   =>$this->input->post('txtFromPlace'),
+		'to_place' =>$this->input->post('txtToPlace'),
+		'student_fare' =>$this->input->post('txtStudentFare'),
+		'normal_fare' =>$this->input->post('txtNormalFare')
+
+
+		);
+		$this->load->model('Vehicle_mgmt');
+		$this->Vehicle_mgmt->fareUpdate($fid,$data);
+
+
+		$this->selectFare();
+		echo "<h1>"."Fare Sucessfully Updated."."</h1>";
+
+	}
+
+
+
+
+
+	public function updateSchedule(){
+
+		$sid=$this->input->post('id');
+
+		$data = array(
+		'vehicle_id'   =>$this->input->post('cmbVehicleId'),
+		'schedule_id' =>$this->input->post('txtScheduleId'),
+		'route_id' =>$this->input->post('cmbRouteId'),
+		'departure_time'   =>$this->input->post('txtDepartureTime'),
+		'arrival_time' =>$this->input->post('txtArrivalTime'),
+		'date' =>$this->input->post('txtDate')
+
+
+		);
+		$this->load->model('Vehicle_mgmt');
+		$this->Vehicle_mgmt->scheduleUpdate($sid,$data);
+
+
+		$this->selectSchedule();
+		echo "<h1>"."Schedule Sucessfully Updated."."</h1>";
+
+	}
+
+	public function updateRoute(){
+
+		$rid=$this->input->post('id');
+
+		$data = array(
+		'route_id'   =>$this->input->post('txtRouteId'),
+		'route' =>$this->input->post('txtRoute')
+
+		);
+		$this->load->model('Vehicle_mgmt');
+		$this->Vehicle_mgmt->routeUpdate($rid,$data);
+
+
+		$this->selectRoute();
+		echo "<h1>"."Route Sucessfully Updated."."</h1>";
+
+	}
+
 
 
 
@@ -346,17 +504,70 @@ class Vehicle_ctrl extends CI_Controller
 		$vid=$this->input->get('vid');
 		$this->load->model('Vehicle_mgmt');
 		$getV=$this->Vehicle_mgmt->getVehicleDetail($vid);
-		$data['details']=$getV;
+		$data['vdetails']=$getV;
 		
-
-		$this->viewVehicle();
 		$this->load->view('update_vehicle',$data);
-		
-
-
-
 
 	}
+
+
+		public function getFareDetails(){
+
+		$fid=$this->input->get('fid');
+		$this->load->model('Vehicle_mgmt');
+
+		$getF=$this->Vehicle_mgmt->getFareDetail($fid);
+		$getrouteid=$this->Vehicle_mgmt->getRouteId();
+		$getvid=$this->Vehicle_mgmt->getVId();
+
+			$data['rid']=$getrouteid;
+			$data['vid']=$getvid;
+			$data['fdetails']=$getF;
+
+
+		$this->load->view('update_fare',$data);
+
+	}
+
+
+
+	public function getScheduleDetails(){
+
+		$sid=$this->input->get('sid');
+		$this->load->model('Vehicle_mgmt');
+
+		$getS=$this->Vehicle_mgmt->getScheduleDetail($sid);
+		$getrouteid=$this->Vehicle_mgmt->getRouteId();
+		$getvid=$this->Vehicle_mgmt->getVId();
+
+			$data['rid']=$getrouteid;
+			$data['vid']=$getvid;
+			$data['sdetails']=$getS;
+
+
+		$this->load->view('update_schedule',$data);
+
+	}
+
+
+
+
+		public function getRouteDetails(){
+
+		$rid=$this->input->get('rid');
+		$this->load->model('Vehicle_mgmt');
+
+		$getR=$this->Vehicle_mgmt->getRouteDetail($rid);
+
+			$data['rdetails']=$getR;
+
+
+		$this->load->view('update_route',$data);
+
+	}
+
+
+
 
 
 

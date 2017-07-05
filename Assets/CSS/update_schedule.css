@@ -38,7 +38,7 @@ body
 {
    border: 0px #CCCCCC solid;
    border-radius: 4px;
-   background-color: #FFDAB9;
+   background-color: #DDA0DD;
    background-image: none;
    color :#000000;
    font-family: Arial;
@@ -73,7 +73,7 @@ body
    font-style: normal;
    text-decoration: none;
    width: 126px;
-   height: 34px;
+   height: 35px;
 }
 #wb_Form1
 {
@@ -81,11 +81,82 @@ body
    background-image: none;
    border: 0px #CCCCCC solid;
 }
+#Button1
+{
+   border: 1px #2E6DA4 solid;
+   border-radius: 4px;
+   background-color: #3CB371;
+   background-image: none;
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 29px;
+}
 #Label1
 {
    border: 0px #CCCCCC solid;
    border-radius: 4px;
-   background-color: #98FB98;
+   background-color: #FFEBCD;
+   background-image: none;
+   color :#000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 32px;
+   padding: 4px 4px 4px 4px;
+   text-align: left;
+   vertical-align: top;
+}
+#Combobox1
+{
+   border: 1px #CCCCCC solid;
+   border-radius: 4px;
+   background-color: #FFFFFF;
+   background-image: none;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 27px;
+   padding: 4px 4px 4px 4px;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+#Combobox1:focus
+{
+   border-color: #66AFE9;
+   -webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
+   -moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
+   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
+   outline: 0;
+}
+#Combobox2
+{
+   border: 1px #CCCCCC solid;
+   border-radius: 4px;
+   background-color: #FFFFFF;
+   background-image: none;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 27px;
+   padding: 4px 4px 4px 4px;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+#Combobox2:focus
+{
+   border-color: #66AFE9;
+   -webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
+   -moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
+   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
+   outline: 0;
+}
+#Label5
+{
+   border: 0px #CCCCCC solid;
+   border-radius: 4px;
+   background-color: #FFEBCD;
    background-image: none;
    color :#000000;
    font-family: Arial;
@@ -99,35 +170,7 @@ body
 {
    border: 0px #CCCCCC solid;
    border-radius: 4px;
-   background-color: #98FB98;
-   background-image: none;
-   color :#000000;
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 32px;
-   padding: 4px 4px 4px 4px;
-   text-align: left;
-   vertical-align: top;
-}
-#Label3
-{
-   border: 0px #CCCCCC solid;
-   border-radius: 4px;
-   background-color: #98FB98;
-   background-image: none;
-   color :#000000;
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 32px;
-   padding: 4px 4px 4px 4px;
-   text-align: left;
-   vertical-align: top;
-}
-#Label4
-{
-   border: 0px #CCCCCC solid;
-   border-radius: 4px;
-   background-color: #98FB98;
+   background-color: #FFEBCD;
    background-image: none;
    color :#000000;
    font-family: Arial;
@@ -159,67 +202,25 @@ body
    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
    outline: 0;
 }
-#Combobox1
+#Label8
 {
-   border: 1px #CCCCCC solid;
+   border: 0px #CCCCCC solid;
    border-radius: 4px;
-   background-color: #FFFFFF;
-   background-image: none;
-   color: #000000;
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 27px;
-   padding: 4px 4px 4px 4px;
-   -webkit-box-sizing: border-box;
-   -moz-box-sizing: border-box;
-   box-sizing: border-box;
-}
-#Combobox1:focus
-{
-   border-color: #66AFE9;
-   -webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
-   -moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
-   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
-   outline: 0;
-}
-#Editbox2
-{
-   border: 1px #CCCCCC solid;
-   border-radius: 4px;
-   background-color: #FFFFFF;
+   background-color: #FFEBCD;
    background-image: none;
    color :#000000;
    font-family: Arial;
    font-weight: normal;
-   font-size: 27px;
+   font-size: 32px;
    padding: 4px 4px 4px 4px;
    text-align: left;
-   vertical-align: middle;
+   vertical-align: top;
 }
-#Editbox2:focus
-{
-   border-color: #66AFE9;
-   -webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
-   -moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
-   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
-   outline: 0;
-}
-#Button1
-{
-   border: 1px #2E6DA4 solid;
-   border-radius: 4px;
-   background-color: #008000;
-   background-image: none;
-   color: #FFFFFF;
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 43px;
-}
-#Label5
+#Label3
 {
    border: 0px #CCCCCC solid;
    border-radius: 4px;
-   background-color: #98FB98;
+   background-color: #FFEBCD;
    background-image: none;
    color :#000000;
    font-family: Arial;
@@ -233,7 +234,7 @@ body
 {
    border: 0px #CCCCCC solid;
    border-radius: 4px;
-   background-color: #98FB98;
+   background-color: #FFEBCD;
    background-image: none;
    color :#000000;
    font-family: Arial;
@@ -243,30 +244,7 @@ body
    text-align: left;
    vertical-align: top;
 }
-#Combobox4
-{
-   border: 1px #CCCCCC solid;
-   border-radius: 4px;
-   background-color: #FFFFFF;
-   background-image: none;
-   color: #000000;
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 27px;
-   padding: 4px 4px 4px 4px;
-   -webkit-box-sizing: border-box;
-   -moz-box-sizing: border-box;
-   box-sizing: border-box;
-}
-#Combobox4:focus
-{
-   border-color: #66AFE9;
-   -webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
-   -moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
-   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
-   outline: 0;
-}
-#Editbox3
+#Editbox5
 {
    border: 1px #CCCCCC solid;
    border-radius: 4px;
@@ -280,27 +258,13 @@ body
    text-align: left;
    vertical-align: middle;
 }
-#Editbox3:focus
+#Editbox5:focus
 {
    border-color: #66AFE9;
    -webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
    -moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
    outline: 0;
-}
-#Label8
-{
-   border: 0px #CCCCCC solid;
-   border-radius: 4px;
-   background-color: #98FB98;
-   background-image: none;
-   color :#000000;
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 32px;
-   padding: 4px 4px 4px 4px;
-   text-align: left;
-   vertical-align: top;
 }
 #Editbox4
 {
@@ -324,7 +288,7 @@ body
    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);
    outline: 0;
 }
-#Editbox5
+#Editbox2
 {
    border: 1px #CCCCCC solid;
    border-radius: 4px;
@@ -338,7 +302,7 @@ body
    text-align: left;
    vertical-align: middle;
 }
-#Editbox5:focus
+#Editbox2:focus
 {
    border-color: #66AFE9;
    -webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.60);

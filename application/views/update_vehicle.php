@@ -55,19 +55,14 @@ tr:nth-child(even) {
 <input type="submit" name="logout" value="Logout" id="Logout1">
 </form>
 </div>
-<div id="wb_Form1" style="position:absolute;left:533px;top:120px;width:597px;height:455px;z-index:12;">
+<div id="wb_Form1" style="position:absolute;left:33px;top:120px;width:597px;height:455px;z-index:12;">
 <form  action="<?php echo base_url();?>Vehicle_ctrl/updateVehicle" method="post" >
 
 <?php
-if (is_array($details) || is_object($details))
-{
+// if($records->num_rows()>0){
+    foreach ($vdetails as $vdata) {
+      ?>
 
-    foreach ($details as $vdata) {
-      
-    }
-  }
-
-?>
 
 
 
@@ -84,41 +79,12 @@ if (is_array($details) || is_object($details))
 <option value="Taxi">Taxi</option>
 <option value="Tempo">Tempo</option>
 </select>
+  
+  <?php
+  }
+?>
 
 </form>
-
-
-</div>
-<div id="wb_Text1" style="position:absolute;left:203px;top:103px;width:240px;height:37px;z-index:13;">
-<span style="background-color:#90EE90;color:#000000;font-family:Arial;font-size:32px;"><strong>Select Vehicle</strong></span></div><br><br><br><br><br><br><br><br><br><br>
-
-<table border="1" style="background-color:82E0AA;">
-
-
-<tr>
-    <th><h1>Vehicle Identity Number</h1></th>
-    <th><h1>Select</h1></th>
-  </tr>
-<?php
-	foreach ($records as $name): 
-?>
-	<tr>
-	<td><h3><?= $name->vehicle_id?></h3></td>
-	<td><a href="<?php echo base_url();?>Vehicle_ctrl/getVehicleDetails?vid=<?php echo  $name->vehicle_id;?>"><h3>Select </a></h3></td>
-
-	</tr>
-
-<?php
-	endforeach;
-
-?>
-
-
-</table>
-
-
-
-
 
 
 </div>
