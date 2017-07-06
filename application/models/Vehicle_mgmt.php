@@ -16,6 +16,16 @@ class Vehicle_mgmt extends CI_Model
 
 
 
+	public function selectStationd(){
+	
+		$this->db->select('*');
+		$this->db->from('station');
+		// $this->db->join('vehicle','route.route_id=vehicle.route_id','inner');
+		$query=$this->db->get();
+		return $query->result();
+	}
+
+
 
 	public function selectOwner(){
 	
@@ -98,6 +108,16 @@ class Vehicle_mgmt extends CI_Model
 	}
 
 
+		public function ownerDelete($oid)
+	{
+		$this->db->where('owner_id',$oid);
+		$this->db->delete('owner');
+		return "deleted";
+
+	}
+
+
+
 	public function scheduleDelete($sid)
 	{
 		$this->db->where('schedule_id',$sid);
@@ -107,7 +127,13 @@ class Vehicle_mgmt extends CI_Model
 	}
 
 
+	public function stationDelete($sid)
+	{
+		$this->db->where('station_id',$sid);
+		$this->db->delete('station');
+		return "deleted";
 
+	}
 
 
 
@@ -119,6 +145,14 @@ class Vehicle_mgmt extends CI_Model
 
 	}
 	
+	public function newsDelete($nid)
+	{
+		$this->db->where('news_id',$nid);
+		$this->db->delete('news_updates');
+		return "deleted";
+
+	}
+
 
 	public function addOwner($data){
 
@@ -211,6 +245,52 @@ class Vehicle_mgmt extends CI_Model
 		}
 
 
+
+		public function getStationDetail($sid){
+
+		$condition = "station_id =" . "'" . $sid . "'";
+			$this->db->select('*');
+			$this->db->from('station');
+			$this->db->where($condition);
+
+			$sql = $this->db->get();
+
+			if ($sql->num_rows() == 1) {
+			return $sql->result();
+			} 
+
+			else
+			{
+
+			return false;
+
+			}
+		}
+
+
+
+		public function getOwnerDetail($oid){
+
+		$condition = "owner_id =" . "'" . $oid . "'";
+			$this->db->select('*');
+			$this->db->from('owner');
+			$this->db->where($condition);
+
+			$sql = $this->db->get();
+
+			if ($sql->num_rows() == 1) {
+			return $sql->result();
+			} 
+
+			else
+			{
+
+			return false;
+
+			}
+		}
+
+
 		public function getScheduleDetail($sid){
 
 		$condition = "schedule_id =" . "'" . $sid . "'";
@@ -256,6 +336,27 @@ class Vehicle_mgmt extends CI_Model
 			}
 		}
 
+
+		public function getNewsDetail($nid){
+
+		$condition = "news_id =" . "'" . $nid . "'";
+			$this->db->select('*');
+			$this->db->from('news_updates');
+			$this->db->where($condition);
+
+			$sql = $this->db->get();
+
+			if ($sql->num_rows() == 1) {
+			return $sql->result();
+			} 
+
+			else
+			{
+
+			return false;
+
+			}
+		}
 
 
 
@@ -335,6 +436,22 @@ class Vehicle_mgmt extends CI_Model
 	}
 
 
+	public function ownerUpdate($oid,$data)
+	{
+
+		$this->db->where('owner_id', $oid);
+		$this->db->update('owner', $data);
+		return "owner updated";
+
+
+	}
+
+
+
+
+
+
+
 
 
 
@@ -354,7 +471,30 @@ class Vehicle_mgmt extends CI_Model
 
 		$this->db->where('id', $rid);
 		$this->db->update('route', $data);
-		return "fare updated";
+		return "route updated";
+
+
+	}
+
+
+
+	public function newsUpdate($nid,$data)
+	{
+
+		$this->db->where('news_id', $nid);
+		$this->db->update('news_updates', $data);
+		return "news updated";
+
+
+	}
+
+
+	public function stationUpdate($sid,$data)
+	{
+
+		$this->db->where('id', $sid);
+		$this->db->update('station', $data);
+		return "station updated";
 
 
 	}

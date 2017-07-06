@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['form_name']) && $_POST
 <div id="wb_Image2" style="position:absolute;left:0px;top:0px;width:176px;height:103px;z-index:13;">
 <a href="<?PHP echo base_url();?>Redirect/index"><img src="<?PHP echo base_url();?>Assets/images/Untitled design.png" id="Image2" alt=""></a></div>
 <label for="" id="Label7" style="position:absolute;left:176px;top:0px;width:508px;height:56px;line-height:56px;z-index:14;">Update Vehicle Fare</label>
-<input type="submit" id="Button2" onclick="window.location.href='./dashboard.html';return false;" name="btnDashboard" value="Back to Dashboard" style="position:absolute;left:692px;top:0px;width:278px;height:41px;z-index:15;">
+<input type="submit" id="Button2" onclick="window.location.href='<?PHP echo base_url();?>Redirect/adminDashboard';return false;" name="btnDashboard" value="Back to Dashboard" style="position:absolute;left:692px;top:0px;width:278px;height:41px;z-index:15;">
 <div id="wb_Logout1" style="position:absolute;left:844px;top:41px;width:124px;height:32px;z-index:16;">
 <form name="logoutform" method="post" action="<?PHP echo base_url();?>User_ctrl/logout" id="logoutform">
 <input type="hidden" name="form_name" value="logoutform">

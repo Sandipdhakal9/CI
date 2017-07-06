@@ -304,6 +304,19 @@ class Vehicle_ctrl extends CI_Controller
 	}	
 
 
+		public function selectStation()
+	{
+		$this->load->model('Vehicle_mgmt');
+		$data['records']=$this->Vehicle_mgmt->selectStationd();
+
+
+		//$this->getVehicleDetails();
+
+		$this->load->view('select_station',$data);
+	}
+
+
+
 	public function selectRoute()
 	{
 		$this->load->model('Vehicle_mgmt');
@@ -327,6 +340,29 @@ class Vehicle_ctrl extends CI_Controller
 		$this->load->view('select_schedule',$data);
 	}
 
+
+		public function selectOwner()
+	{
+		$this->load->model('Vehicle_mgmt');
+		$data['records']=$this->Vehicle_mgmt->selectOwner();
+
+
+		//$this->getVehicleDetails();
+
+		$this->load->view('select_owner',$data);
+	}
+
+
+	public function selectNews()
+	{
+		$this->load->model('Vehicle_mgmt');
+		$data['records']=$this->Vehicle_mgmt->selectNews();
+
+
+		//$this->getVehicleDetails();
+
+		$this->load->view('select_news',$data);
+	}
 
 
 
@@ -375,6 +411,24 @@ class Vehicle_ctrl extends CI_Controller
 
 
 
+	public function deleteOwner()
+	{
+		$oid=$this->input->get('oid');
+		//$id=$this->input->get('id');
+		$this->load->model('Vehicle_mgmt');
+		$this->Vehicle_mgmt->ownerDelete($oid);
+
+		
+		$this->selectOwner();
+		echo "<h1>"."Owner Details Deleted"."</h1>";
+
+		
+	}
+
+
+
+
+
 		public function deleteSchedule()
 	{
 		$sid=$this->input->get('sid');
@@ -399,6 +453,37 @@ class Vehicle_ctrl extends CI_Controller
 		
 		$this->selectRoute();
 		echo "<h1>"."Route Details Deleted"."</h1>";
+
+		
+	}
+
+
+	public function deleteNews()
+	{
+		$nid=$this->input->get('nid');
+		//$id=$this->input->get('id');
+		$this->load->model('Vehicle_mgmt');
+		$this->Vehicle_mgmt->newsDelete($nid);
+
+		
+		$this->selectNews();
+		echo "<h1>"."News Details Deleted"."</h1>";
+
+		
+	}
+
+
+
+	public function deleteStation()
+	{
+		$sid=$this->input->get('sid');
+		//$id=$this->input->get('id');
+		$this->load->model('Vehicle_mgmt');
+		$this->Vehicle_mgmt->stationDelete($sid);
+
+		
+		$this->selectStation();
+		echo "<h1>"."Station Details Deleted"."</h1>";
 
 		
 	}
@@ -452,6 +537,33 @@ class Vehicle_ctrl extends CI_Controller
 
 
 
+	public function updateOwner(){
+
+		$oid=$this->input->post('id');
+
+		$data = array(
+		'vehicle_id'   =>$this->input->post('cmbVehicleId'),
+		'full_name' =>$this->input->post('txtOwnerName'),
+		'phone_number' =>$this->input->post('txtPhoneNumber')
+
+
+		);
+		$this->load->model('Vehicle_mgmt');
+		$this->Vehicle_mgmt->ownerUpdate($oid,$data);
+
+
+		$this->selectOwner();
+		echo "<h1>"."Owner Sucessfully Updated."."</h1>";
+
+	}
+
+
+
+
+
+
+
+
 
 
 	public function updateSchedule(){
@@ -495,6 +607,50 @@ class Vehicle_ctrl extends CI_Controller
 
 	}
 
+	public function updateNews(){
+
+		$nid=$this->input->post('id');
+
+		$data = array(
+		'news_text'   =>$this->input->post('txtNews')
+
+		);
+		$this->load->model('Vehicle_mgmt');
+		$this->Vehicle_mgmt->newsUpdate($nid,$data);
+
+
+		$this->selectNews();
+		echo "<h1>"."News Sucessfully Updated."."</h1>";
+
+	}
+
+
+
+
+
+
+
+
+	public function updateStation(){
+
+		$sid=$this->input->post('id');
+
+		$data = array(
+		'station_id'   =>$this->input->post('txtStationId'),
+		'station_name'   =>$this->input->post('txtStationName'),
+		'station_location'   =>$this->input->post('txtStationLocation'),
+		'vehicle_id' =>$this->input->post('cmbVehicleId')
+
+		);
+		$this->load->model('Vehicle_mgmt');
+		$this->Vehicle_mgmt->stationUpdate($sid,$data);
+
+
+		$this->selectStation();
+		echo "<h1>"."Station Sucessfully Updated."."</h1>";
+
+	}
+
 
 
 
@@ -531,6 +687,47 @@ class Vehicle_ctrl extends CI_Controller
 
 
 
+		public function getStationDetails(){
+
+		$sid=$this->input->get('sid');
+		$this->load->model('Vehicle_mgmt');
+
+		$getS=$this->Vehicle_mgmt->getStationDetail($sid);
+		$getvid=$this->Vehicle_mgmt->getVId();
+
+			$data['vid']=$getvid;
+			$data['sdetails']=$getS;
+
+
+		$this->load->view('update_station',$data);
+
+	}
+
+
+
+
+		public function getOwnerDetails(){
+
+		$oid=$this->input->get('oid');
+		$this->load->model('Vehicle_mgmt');
+
+		$getO=$this->Vehicle_mgmt->getOwnerDetail($oid);
+		$getvid=$this->Vehicle_mgmt->getVId();
+
+			$data['vid']=$getvid;
+			$data['odetails']=$getO;
+
+
+		$this->load->view('update_owner',$data);
+
+	}
+
+
+
+
+
+
+
 	public function getScheduleDetails(){
 
 		$sid=$this->input->get('sid');
@@ -563,6 +760,22 @@ class Vehicle_ctrl extends CI_Controller
 
 
 		$this->load->view('update_route',$data);
+
+	}
+
+
+
+		public function getNewsDetails(){
+
+		$nid=$this->input->get('nid');
+		$this->load->model('Vehicle_mgmt');
+
+		$getN=$this->Vehicle_mgmt->getNewsDetail($nid);
+
+			$data['ndetails']=$getN;
+
+
+		$this->load->view('update_news',$data);
 
 	}
 

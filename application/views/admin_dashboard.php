@@ -61,13 +61,13 @@ $uname=$_SESSION['username'];
 <input type="submit" id="Button11" onclick="window.location.href='<?php echo base_url(); ?>Vehicle_ctrl/selectSchedule';return false;" name="Update Schedule" value="Update/Delete" style="position:absolute;left:595px;top:621px;width:299px;height:60px;z-index:22;">
 <!-- <input type="submit" id="Button12" onclick="window.location.href='<?php echo base_url();?>Vehicle_ctrl/scheduleDeleteInfo';return false;" name="Delete Schedule" value="Delete" style="position:absolute;left:744px;top:621px;width:152px;height:60px;z-index:23;"> -->
 <input type="submit" id="Button13" onclick="window.location.href='<?php echo base_url(); ?>Vehicle_ctrl/getOwnerV';return false;" name="Add Owner" value="Add" style="position:absolute;left:368px;top:732px;width:188px;height:60px;z-index:24;">
-<input type="submit" id="Button14" onclick="window.location.href='./update_owner.html';return false;" name="Update Owner" value="Update/Delete" style="position:absolute;left:595px;top:732px;width:299px;height:60px;z-index:25;">
+<input type="submit" id="Button14" onclick="window.location.href='<?php echo base_url(); ?>Vehicle_ctrl/selectOwner';return false;" name="Update Owner" value="Update/Delete" style="position:absolute;left:595px;top:732px;width:299px;height:60px;z-index:25;">
 <!-- <input type="submit" id="Button15" onclick="window.location.href='<?php echo base_url();?>Vehicle_ctrl/ownerDeleteInfo';return false;" name="Delete Owner" value="Delete" style="position:absolute;left:744px;top:732px;width:152px;height:60px;z-index:26;"> -->
 <input type="submit" id="Button16" onclick="window.location.href='<?php echo base_url();?>Vehicle_ctrl/getStationVR';return false;" name="Add Station" value="Add" style="position:absolute;left:368px;top:856px;width:188px;height:60px;z-index:27;">
-<input type="submit" id="Button17" onclick="window.location.href='./Update_vehicle_station.html';return false;" name="Update Station" value="Update/Delete" style="position:absolute;left:595px;top:856px;width:299px;height:60px;z-index:28;">
+<input type="submit" id="Button17" onclick="window.location.href='<?php echo base_url(); ?>Vehicle_ctrl/selectStation';return false;" name="Update Station" value="Update/Delete" style="position:absolute;left:595px;top:856px;width:299px;height:60px;z-index:28;">
 <!-- <input type="submit" id="Button18" onclick="window.location.href='<?php echo base_url();?>Vehicle_ctrl/stationDeleteInfo';return false;" name="Delete Station" value="Delete" style="position:absolute;left:744px;top:856px;width:152px;height:60px;z-index:29;"> -->
 
-<input type="submit" id="Button19" onclick="window.location.href='<?php echo base_url();?>Redirect/updateNews';return false;" name="btnUpdateNews" value="Update Latest News Here" style="position:absolute;left:462px;top:227px;width:434px;height:46px;z-index:30;">
+<input type="submit" id="Button19" onclick="window.location.href='<?php echo base_url();?>Vehicle_ctrl/selectNews';return false;" name="btnUpdateNews" value="Update Latest News Here" style="position:absolute;left:462px;top:227px;width:434px;height:46px;z-index:30;">
 
 </div>
 </body>
