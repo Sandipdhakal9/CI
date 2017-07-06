@@ -8,6 +8,18 @@ class Redirect extends CI_Controller
 	{
 		$this->load->view('index');
 	}
+
+	public function aboutUs()
+	{
+		$this->load->view('about_us');
+	}
+
+	public function features()
+	{
+		$this->load->view('features');
+	}
+
+
 	public function userDashboard()
 	{
 		$this->load->view('dashboard');

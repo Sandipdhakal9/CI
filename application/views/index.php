@@ -55,10 +55,10 @@ $(document).ready(function()
 </li>
 <li><a href="<?php echo base_url();?>Redirect/login" target="_blank">Login</a>
 </li>
-<li><a href="#" target="_self">Features</a>
+<li><a href="<?php echo base_url();?>Redirect/features" target="_self">Features</a>
 </li>
-<li><a href="#" target="_self">About&nbsp;Us</a>
-<!-- <a href="<?php echo base_url(); ?>Assets/images/Transport_Fare_Nepal.png" download>Click Here do download</a> -->
+<li><a href="<?php echo base_url();?>Redirect/aboutUs" target="_self">About&nbsp;Us</a>
+<!-- <a href="<?php echo base_url(); ?>Assets/images/Transport_Fare_Nepal.png" download>Click Here do download Help File(User Guide)</a> -->
 </li>
 </ul>
 </div>
